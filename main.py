@@ -1,11 +1,28 @@
 
-
 """
-This is a program that takes a given url, and returns an
-ordered list of words and the frequency they appear.
+This is a program that finds the most common words used on a website page by:
 
-It can remove common words, low frequency words, and export words to .csv
+    1) Collecting data
+            - the user supplies a url
+            
+    2) Cleaning data
+            - the programm searches through the site body for text,
+            - strips the text of its html formatting,
+            - creates individual words via text parsing
+            - removes low-impact words (such as 'and', 'to', 'the', etc),
+            
+    3) Organizing data
+            - counts the frequency each (remaining) word occured on the page
+            - orders the words from most frequent to least frequent
+
+    4) Presenting data
+            - prints the words and their frequency in decending order
+            - (optional) only prints words that occured above a given frequency (default = 3)
+
+    5) Saving data
+            - (optional) exports ordered list as a .csv file
 """
+
 
 from bs4 import BeautifulSoup
 import requests
